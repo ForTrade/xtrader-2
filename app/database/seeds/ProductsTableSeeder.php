@@ -8,11 +8,12 @@ class ProductsTableSeeder extends Seeder {
 		// DB::table('products')->truncate();
 
 		$products = array(
-
+                    array('name' => 'iPhone 6', 'description'=>'Test it'),
+                    array('name' => 'Nexus 5', 'description'=>'Test it')
 		);
 
 		// Uncomment the below to run the seeder
-		// DB::table('products')->insert($products);
+		DB::table('products')->insert($products);
 	}
 
 }

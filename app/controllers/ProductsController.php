@@ -1,6 +1,15 @@
 <?php
 
-class ProductsController extends BaseController {
+use Core\Repos\Product\ProductRepository;
+
+class ProductsController extends \BaseController {
+    
+    private $productRepo;
+    
+    function __construct(ProductRepository $productRepo)
+    {
+        $this->productRepo = $productRepo;
+    }
 
     /**
      * Display a listing of the resource.
@@ -9,7 +18,8 @@ class ProductsController extends BaseController {
      */
     public function index()
     {
-        return View::make('products.index');
+        return $this->productRepo->getAll();
+        //return View::make('products.index');
     }
 
     /**
@@ -41,7 +51,8 @@ class ProductsController extends BaseController {
      */
     public function show($id)
     {
-        return View::make('products.show');
+        //return View::make('products.show');
+        return $this->productRepo->getById($id);
     }
 
     /**
