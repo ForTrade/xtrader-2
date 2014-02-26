@@ -1,0 +1,10 @@
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="Scotch">
+
+<title>Test Layout</title>
+
+<!-- load bootstrap and jquery from a cdn -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
