@@ -1,4 +1,8 @@
 @extends('layouts.master')
 @section('content')
-    Products.Index
+    
+    @foreach($products as $product)
+        <p>{{ $product->name }}</p>
+    @endforeach
+    
 @stop
