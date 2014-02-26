@@ -1,10 +1,19 @@
 /bootstrap/compiled.php
+
 /vendor
-/server.php
+
+server.php
+
+_ide_helper.php
 composer.phar
+
 composer.lock
+
 .env.local.php
+
 .env.php
+
 .DS_Store
+
 Thumbs.db
 
