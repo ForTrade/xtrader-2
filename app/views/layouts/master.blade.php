@@ -4,22 +4,23 @@
         @include('partials.head')
     </head>
     <body>
+        
+        <!-- HEADER -->
+        <header class="row">
+            @include('partials.header')
+        </header><!-- /HEADER -->
+        
+        <!-- MAIN CONTAINER -->
         <div class="container">
-
-            <header class="row">
-                @include('partials.header')
-            </header>
-
             <div id="main" class="row">
-
                 @yield('content')
-
             </div>
-
-            <footer class="row">
-                @include('partials.footer')
-            </footer>
-
-        </div>
+        </div><!-- MAIN CONTAINER -->
+        
+        <!-- FOOTER -->
+        <footer class="row">
+            @include('partials.footer')
+        </footer><!-- FOOTER -->
+        
     </body>
 </html>
