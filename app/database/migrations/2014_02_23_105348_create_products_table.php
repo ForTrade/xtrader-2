@@ -12,10 +12,20 @@ class CreateProductsTable extends Migration {
      */
     public function up()
     {
+        Schema::dropIfExists('products');
+        
         Schema::create('products', function(Blueprint $table) {
                     $table->increments('id');
+                    $table->string('sku');
                     $table->string('name');
                     $table->string('description');
+                    $table->string('type');
+                    $table->string('category_id');
+                    $table->double('price', 10, 3);
+                    $table->integer('stock_qty')->default(0);
+                    $table->integer('available_qty')->default(0);
+                    $table->boolean('featured')->default(0);
+                    $table->boolean('enabled')->default(0);
                     $table->timestamps();
                 });
     }

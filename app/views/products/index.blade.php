@@ -5,6 +5,7 @@
     <div class="col-md-12">
         <p>{{ $product->name }}</p>
         <p>{{ $product->discounts[0]->name }}</p>
+        <p>{{ $product->category->name }}</p>
     </div>  
     @endforeach
     

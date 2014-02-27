@@ -10,5 +10,10 @@ class Product extends Eloquent {
         return $this->morphToMany('Discount', 'discountable');
     }
     
+    public function category()
+    {
+        return $this->belongsTo('Category');
+    }
+    
 
 }
