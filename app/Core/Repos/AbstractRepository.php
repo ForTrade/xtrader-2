@@ -32,6 +32,11 @@ abstract class AbstractRepository {
     {
         return $this->model->all();
     }
+    
+    public function discounts()
+    {
+        return $this->model->discounts();
+    }
 
 }
 

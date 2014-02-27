@@ -19,7 +19,7 @@ class ProductsController extends \BaseController {
     public function index()
     {
         $products = $this->productRepo->getAll();
-        return View::make('products.index', compact($products));
+        return View::make('products.index', compact('products'));
     }
 
     /**

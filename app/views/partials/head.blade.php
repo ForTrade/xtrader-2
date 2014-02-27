@@ -1,8 +1,7 @@
 <meta charset="utf-8">
 <meta name="description" content="">
-<meta name="author" content="Scotch">
+<meta name="author" content="">
 <title>Test Layout</title>
-<!-- load bootstrap and jquery from a cdn -->
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <!-- Optional theme -->
