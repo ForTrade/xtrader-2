@@ -10,6 +10,14 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+/**
+Event::listen('illuminate.query', function($sql)
+{
+    print_r($sql . "\n");
+});
+ * 
+ */
+
 
 Route::get('/', function()
 {

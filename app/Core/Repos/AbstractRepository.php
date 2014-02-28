@@ -40,5 +40,6 @@ abstract class AbstractRepository {
         return $this->model->discounts();
     }
 
+
 }
 

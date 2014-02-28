@@ -29,7 +29,7 @@ class CacheDecorator extends DbProductRepository {
      */
     public function getAll()
     {
-        $key = md5('all');
+        $key = md5('products.getAll');
 
         if ($this->cache->has($key)) {
             dd($this->cache->get($key));
@@ -51,7 +51,7 @@ class CacheDecorator extends DbProductRepository {
      */
     public function getById($id)
     {
-        $key = md5('id.' . $id);
+        $key = md5('products.id.' . $id);
 
         if ($this->cache->has($key)) {
             dd($this->cache->get($key));
@@ -64,5 +64,7 @@ class CacheDecorator extends DbProductRepository {
 
         return $products;
     }
+
+
 
 }
