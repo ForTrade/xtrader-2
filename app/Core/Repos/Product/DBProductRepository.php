@@ -1,6 +1,4 @@
-<?php
-
-namespace Core\Repos\Product;
+<?php namespace Core\Repos\Product;
 
 use Core\Repos\AbstractRepository;
 use Product;
@@ -19,7 +17,7 @@ class DbProductRepository extends AbstractRepository implements ProductRepositor
     {
         $this->model = $model;
     }
-    
+
     public function category()
     {
         return $this->model->category();

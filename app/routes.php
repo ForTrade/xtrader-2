@@ -10,7 +10,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-App::bind('Core\Repos\Product\ProductRepository', 'Core\Repos\Product\DbProductRepository');
 
 Route::get('/', function()
 {

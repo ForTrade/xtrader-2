@@ -1,6 +1,8 @@
-<?php
+<?php namespace Core\Repos;
 
-namespace Core\Repos;
+/**
+ * https://github.com/laracasts/Reusable-Repositories/tree/master/app/Acme/Repos
+ */
 
 abstract class AbstractRepository {
 
@@ -32,7 +34,7 @@ abstract class AbstractRepository {
     {
         return $this->model->all();
     }
-    
+
     public function discounts()
     {
         return $this->model->discounts();
