@@ -12,7 +12,8 @@ class CreateDiscountablesTable extends Migration {
      */
     public function up()
     {
-        Schema::dropIfExists('discountables');
+        //Schema::dropIfExists('discountables');
+        
         Schema::create('discountables', function(Blueprint $table) {
                     $table->integer('discount_id');
                     $table->integer('discountable_id');

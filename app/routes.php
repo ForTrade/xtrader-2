@@ -13,7 +13,8 @@
 
 Event::listen('illuminate.query', function($sql)
 {
-    print_r("<pre>" . $sql . "</pre>");
+    if (!App::runningInConsole())
+        print_r("<pre>" . $sql . "</pre>");
 });
 
 Route::get('/', function()

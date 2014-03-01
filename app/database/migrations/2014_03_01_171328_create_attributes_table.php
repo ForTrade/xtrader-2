@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDiscountsTable extends Migration {
+class CreateAttributesTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateDiscountsTable extends Migration {
      */
     public function up()
     {
-        Schema::dropIfExists('discounts');
+        //Schema::dropIfExists('attributes');
         
-        Schema::create('discounts', function(Blueprint $table) {
+        Schema::create('attributes', function(Blueprint $table) {
                     $table->increments('id');
                     $table->string('name');
-                    $table->string('type');
-                    $table->float('value');
-                    $table->boolean('enabled');
+                    $table->string('value');
+                    $table->integer('product_id')
+                            ->foreign('product_id')->references('id')->on('products');
                     $table->timestamps();
                 });
     }
@@ -31,7 +31,7 @@ class CreateDiscountsTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('discounts');
+        Schema::drop('attributes');
     }
 
 }

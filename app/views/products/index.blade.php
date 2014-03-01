@@ -6,6 +6,7 @@
         <p>{{ $product->name }}</p>
         <p>{{ $discount[$product->id][0]->name }}</p>
         <p>{{ $category[$product->id]->name }}</p>
+        <p>{{ $attributes[$product->id][0]->name }}</p>
     </div>  
     @endforeach
     

@@ -18,6 +18,12 @@ class ProductPresenter {
      * @var array
      */
     protected $discount = array();
+    
+    /**
+     * Product attributes
+     * @var type 
+     */
+    protected $attributes = array();
 
     /**
      * Inject cache interface to the constructor
@@ -45,10 +51,14 @@ class ProductPresenter {
             $key = md5('product.disc.' . $product->id);
             $this->getDiscounts($key, $product);
             
+            $key = md5('product.attr.' . $product->id);
+            $this->getAttributes($key, $product);
+            
         }
 
         $view->with('category', $this->category);
         $view->with('discount', $this->discount);
+        $view->with('attributes', $this->attributes);
     }
 
     /**
@@ -87,6 +97,20 @@ class ProductPresenter {
 
             $this->discount[$product->id] = $product->discounts;
             $this->cache->put($key, $this->discount[$product->id]);
+            
+        }
+    }
+    
+    private function getAttributes($key,$product)
+    {
+        if ($this->cache->has($key)) {
+
+            $this->attributes[$product->id] = $this->cache->get($key);
+            
+        } else {
+
+            $this->attributes[$product->id] = $product->attributes;
+            $this->cache->put($key, $this->attributes[$product->id]);
             
         }
     }
