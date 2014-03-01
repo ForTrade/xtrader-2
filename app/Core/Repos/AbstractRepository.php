@@ -31,8 +31,9 @@ abstract class AbstractRepository {
     }
 
     /**
-     *
-     * @return type 
+     * Fetch all records
+     * 
+     * @return mixed 
      */
     public function getAll()
     {

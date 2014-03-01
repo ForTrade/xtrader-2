@@ -2,10 +2,21 @@
 
 use Core\Repos\Product\ProductRepository;
 
+/**
+ * 
+ */
 class ProductsController extends \BaseController {
     
+    /**
+     * @var Core\Repos\Product 
+     */
     private $productRepo;
     
+    /**
+     * Construct
+     * 
+     * @param ProductRepository $productRepo 
+     */
     function __construct(ProductRepository $productRepo)
     {
         $this->productRepo = $productRepo;

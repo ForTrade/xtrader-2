@@ -20,6 +20,11 @@ class LaravelCache implements CacheInterface {
      * @var integer
      */
     protected $minutes;
+    
+    /**
+     * @var string 
+     */
+    protected $driver;
 
     /**
      * Construct

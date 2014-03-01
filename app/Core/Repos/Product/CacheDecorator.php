@@ -10,11 +10,12 @@ class CacheDecorator extends DbProductRepository {
      */
     protected $cache;
 
+
     /**
      * Construct
-     *
-     * @param UserRepository $user
-     * @param CacheInterface $cache
+     * 
+     * @param Product $product
+     * @param CacheInterface $cache 
      */
     public function __construct(Product $product, CacheInterface $cache)
     {

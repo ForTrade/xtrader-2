@@ -3,24 +3,25 @@
 use Core\Services\Cache\CacheInterface;
 
 /**
- * 
+ * Product Presenter
  */
 class ProductPresenter {
     
     /**
-     *
-     * @var type 
+     * Product categories
+     * @var array 
      */
     protected $category = array();
 
     /**
-     *
-     * @var type 
+     * Product discounts
+     * @var array
      */
     protected $discount = array();
 
     /**
-     *
+     * Inject cache interface to the constructor
+     * 
      * @param CacheInterface $cache 
      */
     function __construct(CacheInterface $cache)
@@ -29,8 +30,8 @@ class ProductPresenter {
     }
 
     /**
-     *
-     * @param type $view 
+     * Bound data to the view
+     * @param View $view 
      */
     public function compose($view)
     {
@@ -51,11 +52,12 @@ class ProductPresenter {
     }
 
     /**
-     *
-     * @param type $key
-     * @param type $product 
+     * Retrive product categories
+     * 
+     * @param string $key
+     * @param object $product 
      */
-    private function getCategories($key,$product)
+    private function getCategories($key, $product)
     {
         if ($this->cache->has($key)) {
 
@@ -70,9 +72,10 @@ class ProductPresenter {
     }
     
     /**
-     *
-     * @param type $key
-     * @param type $product 
+     * Retrive product discounts
+     * 
+     * @param string $key
+     * @param object $product 
      */
     private function getDiscounts($key,$product)
     {
