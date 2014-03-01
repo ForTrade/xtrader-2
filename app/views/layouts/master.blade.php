@@ -6,7 +6,7 @@
     <body>
         
         <!-- HEADER -->
-        <header class="row">
+        <header class="">
             @include('partials.header')
         </header><!-- /HEADER -->
         
@@ -18,7 +18,7 @@
         </div><!-- MAIN CONTAINER -->
         
         <!-- FOOTER -->
-        <footer class="row">
+        <footer class="">
             @include('partials.footer')
         </footer><!-- FOOTER -->
         

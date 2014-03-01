@@ -17,7 +17,13 @@ class PresenterServiceProvider extends ServiceProvider {
 
     public function register()
     {
+        $this->app->bind(
+                'Core\Services\Cache\CacheInterface',
+                'Core\Services\Cache\LaravelCache'
+                );
+        
         $this->app->view->composer('products.*', 'Core\Presenters\ProductPresenter');
+        
     }
 
 

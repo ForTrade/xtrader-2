@@ -18,13 +18,7 @@ class DbProductRepository extends AbstractRepository implements ProductRepositor
         $this->model = $model;
     }
 
-    /**
-     *
-     * @return type
-     */
-    public function category()
-    {
-        return $this->model->category();
-    }
+    
+
 
 }

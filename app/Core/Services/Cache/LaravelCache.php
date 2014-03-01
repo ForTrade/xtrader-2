@@ -1,6 +1,7 @@
 <?php namespace Core\Services\Cache;
 
 use Illuminate\Cache\CacheManager;
+use Config;
 
 
 class LaravelCache implements CacheInterface {
@@ -27,11 +28,12 @@ class LaravelCache implements CacheInterface {
      * @param string $tag
      * @param integer $minutes
      */
-    public function __construct(CacheManager $cache, $tag, $minutes = 60)
+    public function __construct(CacheManager $cache, $tag=null, $minutes = 60)
     {
         $this->cache = $cache;
         $this->tag = $tag;
         $this->minutes = $minutes;
+        $this->diver = Config::get('cache.driver');
     }
 
     /**
@@ -42,8 +44,13 @@ class LaravelCache implements CacheInterface {
      */
     public function get($key)
     {
-        //return $this->cache->tags($this->tag)->get($key);
-        return $this->cache->get($key);
+        
+        if ($this->diver=='file'){
+            return $this->cache->get($key);
+        }
+        
+        return $this->cache->tags($this->tag)->get($key);
+        
     }
 
     /**
@@ -60,8 +67,12 @@ class LaravelCache implements CacheInterface {
             $minutes = $this->minutes;
         }
 
-        //return $this->cache->tags($this->tag)->put($key, $value, $minutes);
-        return $this->cache->put($key, $value, $minutes);
+        if ($this->diver=='file'){
+            return $this->cache->put($key, $value, $minutes);
+        }
+        
+        return $this->cache->tags($this->tag)->put($key, $value, $minutes);
+        
     }
 
     /**
@@ -72,8 +83,13 @@ class LaravelCache implements CacheInterface {
      */
     public function has($key)
     {
-        //return $this->cache->tags($this->tag)->has($key);
-        return $this->cache->has($key);
+        
+        if ($this->diver=='file'){
+            return $this->cache->has($key);
+        }
+        
+        return $this->cache->tags($this->tag)->has($key);
+        
     }
 
 }

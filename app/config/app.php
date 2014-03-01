@@ -103,6 +103,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Cartalyst\Sentry\SentryServiceProvider',
         'Core\Repos\RepositoryServiceProvider',
+        'Core\Presenters\PresenterServiceProvider',
     ),
     /*
       |--------------------------------------------------------------------------
