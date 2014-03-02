@@ -14,9 +14,11 @@ class ProductsTableSeeder extends Seeder {
                 'description' => 'Test it',
                 'type' => 'Phones',
                 'category_id' => 1,
+                'slug' => 'iphone-6',
                 'price' => 678.000,
                 'stock_qty' => 5,
                 'available_qty' => 5,
+                'enabled' => 1,
                 'created_at' => date('Y-m-d'),
                 'updated_at' => date('Y-m-d')
             ),
@@ -26,9 +28,11 @@ class ProductsTableSeeder extends Seeder {
                 'description' => 'Test it',
                 'type' => 'Phones',
                 'category_id' => 2,
+                'slug' => 'nexus-5',
                 'price' => 350.000,
                 'stock_qty' => 10,
                 'available_qty' => 10,
+                'enabled' => 1,
                 'created_at' => date('Y-m-d'),
                 'updated_at' => date('Y-m-d')
             )

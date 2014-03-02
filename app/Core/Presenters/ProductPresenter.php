@@ -21,12 +21,18 @@ class ProductPresenter {
     
     /**
      * Product attributes
-     * @var type 
+     * @var array 
      */
     protected $attributes = array();
+    
+    /**
+     * Product photos
+     * @var array
+     */
+    protected $photos = array();
 
     /**
-     * Inject cache interface to the constructor
+     * Construct
      * 
      * @param CacheInterface $cache 
      */
@@ -54,11 +60,15 @@ class ProductPresenter {
             $key = md5('product.attr.' . $product->id);
             $this->getAttributes($key, $product);
             
+            $key = md5('product.photos.' . $product->id);
+            $this->getPhotos($key, $product);
+            
         }
 
         $view->with('category', $this->category);
         $view->with('discount', $this->discount);
         $view->with('attributes', $this->attributes);
+        $view->with('photos', $this->photos);
     }
 
     /**
@@ -101,6 +111,12 @@ class ProductPresenter {
         }
     }
     
+    /**
+     * Retrive product photos
+     * 
+     * @param string $key
+     * @param object $product 
+     */
     private function getAttributes($key,$product)
     {
         if ($this->cache->has($key)) {
@@ -111,6 +127,20 @@ class ProductPresenter {
 
             $this->attributes[$product->id] = $product->attributes;
             $this->cache->put($key, $this->attributes[$product->id]);
+            
+        }
+    }
+    
+    private function getPhotos($key,$product)
+    {
+        if ($this->cache->has($key)) {
+
+            $this->photos[$product->id] = $this->cache->get($key);
+            
+        } else {
+
+            $this->photos[$product->id] = $product->photos;
+            $this->cache->put($key, $this->photos[$product->id]);
             
         }
     }

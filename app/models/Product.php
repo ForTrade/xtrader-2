@@ -6,19 +6,19 @@
 class Product extends Eloquent {
 
     /**
-     *
+     * Guarded fields
      * @var type 
      */
     protected $guarded = array();
     
     /**
-     *
+     * Validation rules
      * @var type 
      */
     public static $rules = array();
     
     /**
-     *
+     * Get discounts
      * @return type 
      */
     public function discounts()
@@ -27,7 +27,7 @@ class Product extends Eloquent {
     }
     
     /**
-     *
+     * Get category
      * @return type 
      */
     public function category()
@@ -36,12 +36,21 @@ class Product extends Eloquent {
     }
     
     /**
-     *
+     * Get attributes
      * @return type 
      */
     public function attributes()
     {
         return $this->hasMany('Attribute');
+    }
+    
+    /**
+     * Get photos
+     * @return type 
+     */
+    public function photos()
+    {
+        return $this->hasMany('Photo');
     }
     
 

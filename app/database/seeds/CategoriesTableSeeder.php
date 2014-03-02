@@ -8,8 +8,22 @@ class CategoriesTableSeeder extends Seeder {
         //DB::table('categories')->truncate();
 
         $categories = array(
-            array('name' => 'Category One', 'description' => 'Test category...'),
-            array('name' => 'Category Two', 'description' => 'Test category...'),
+            array(
+                'name' => 'Category One', 
+                'description' => 'Test category...',
+                'slug' => 'category-one',
+                'enabled' => 1,
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d')
+                ),
+            array(
+                'name' => 'Category Two', 
+                'description' => 'Test category...',
+                'slug' => 'category-two',
+                'enabled' => 1,
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d')
+                ),
         );
 
         // Uncomment the below to run the seeder
