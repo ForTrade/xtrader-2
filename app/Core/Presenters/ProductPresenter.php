@@ -139,7 +139,7 @@ class ProductPresenter {
             
         } else {
 
-            $this->photos[$product->id] = $product->photos;
+            $this->photos[$product->id] = $product->photos()->where('primary', '=', 1)->first();
             $this->cache->put($key, $this->photos[$product->id]);
             
         }

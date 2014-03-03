@@ -12,10 +12,23 @@
  */
 class Helpers {
     
-    public static function getProductImage($filename, $id, $size='sm')
+    /**
+     * Compile URL to product images
+     * @param type $filename
+     * @param type $id
+     * @param type $size
+     * @return type 
+     */
+    public static function getProductImage($filename, $id, $size=null)
     {
         $basepath = \Config::get('products.img_base_path');
-        $url = link_to($basepath . '/' . $id .'/'. $size . '/' . $filename);
+        
+        if (!$size){
+            $url = url($basepath . '/' . $id . '/' . $filename);
+        }else{
+            $url = url($basepath . '/' . $id .'/'. $size . '/' . $filename);
+        }
+        
         
         return $url;
     }

@@ -6,7 +6,7 @@
         <div class="thumbnail box-product">
             <span class="offer bg-palette-default"><i class="glyphicon glyphicon-star"></i>{{ $discount[$product->id][0]->value }}</span>
             <figure>
-                <img src="{{ url('uploads/products/images/'.$product->id.'/'.$photos[$product->id][0]->filename.'') }}" alt="{{ $product->name }}" class="img-responsive">
+                <img src="{{ Helpers::getProductImage($photos[$product->id]->filename, $product->id) }}" alt="{{ $product->name }}" class="img-responsive">
             </figure>
             <div class="caption">
                 <h3>{{ $product->name }}</h3>
