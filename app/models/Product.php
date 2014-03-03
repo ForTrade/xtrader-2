@@ -36,6 +36,15 @@ class Product extends Eloquent {
     }
     
     /**
+     * Get vendor
+     * @return type 
+     */
+    public function vendor()
+    {
+        return $this->belongsTo('Vendor');
+    }
+    
+    /**
      * Get attributes
      * @return type 
      */

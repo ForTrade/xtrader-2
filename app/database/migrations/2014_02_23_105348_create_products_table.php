@@ -22,6 +22,8 @@ class CreateProductsTable extends Migration {
                     $table->string('type');
                     $table->string('category_id')
                             ->foreign('category_id')->references('id')->on('categories');
+                    $table->string('vendor_id')
+                            ->foreign('vendor_id')->references('id')->on('vendors');
                     $table->string('slug');
                     $table->double('price', 10, 3);
                     $table->integer('stock_qty')->default(0);

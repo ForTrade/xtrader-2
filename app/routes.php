@@ -23,3 +23,7 @@ Route::get('/', function()
 });
 
 Route::resource('products', 'ProductsController');
+
+Route::get('c/{$slug}', array('as'=>'category', 'use'=>'CategoryController@show'));
+Route::get('p/{$slug}', array('as'=>'product', 'use'=>'ProductController@show'));
+Route::get('v/{$slug}', array('as'=>'vendor', 'use'=>'VendorController@show'));

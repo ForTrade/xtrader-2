@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder {
         //$this->call('SentryUserSeeder');
         //$this->call('SentryUserGroupSeeder');
     	$this->call('PhotosTableSeeder');
+		$this->call('VendorsTableSeeder');
 	}
 
 }

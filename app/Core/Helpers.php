@@ -14,10 +14,11 @@ class Helpers {
     
     /**
      * Compile URL to product images
-     * @param type $filename
-     * @param type $id
-     * @param type $size
-     * @return type 
+     * 
+     * @param string $filename
+     * @param integer $id
+     * @param string $size
+     * @return string 
      */
     public static function getProductImage($filename, $id, $size=null)
     {
@@ -28,7 +29,6 @@ class Helpers {
         }else{
             $url = url($basepath . '/' . $id .'/'. $size . '/' . $filename);
         }
-        
         
         return $url;
     }

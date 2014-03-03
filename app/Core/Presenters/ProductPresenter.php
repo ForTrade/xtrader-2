@@ -30,7 +30,14 @@ class ProductPresenter {
      * @var array
      */
     protected $photos = array();
+    
+    /**
+     * Product vendor
+     * @var array
+     */
+    protected $vendor = array();
 
+    
     /**
      * Construct
      * 
@@ -63,12 +70,17 @@ class ProductPresenter {
             $key = md5('product.photos.' . $product->id);
             $this->getPhotos($key, $product);
             
+            $key = md5('product.vendor.' . $product->id);
+            $this->getVendor($key, $product);
+            
         }
 
         $view->with('category', $this->category);
         $view->with('discount', $this->discount);
         $view->with('attributes', $this->attributes);
         $view->with('photos', $this->photos);
+        $view->with('vendor', $this->vendor);
+        
     }
 
     /**
@@ -131,6 +143,12 @@ class ProductPresenter {
         }
     }
     
+    /**
+     * Retrive product photo
+     * 
+     * @param type $key
+     * @param type $product 
+     */
     private function getPhotos($key,$product)
     {
         if ($this->cache->has($key)) {
@@ -139,8 +157,22 @@ class ProductPresenter {
             
         } else {
 
-            $this->photos[$product->id] = $product->photos()->where('primary', '=', 1)->first();
+            $this->photos[$product->id] = $product->photos()->orderBy('primary', 'desc')->first();
             $this->cache->put($key, $this->photos[$product->id]);
+            
+        }
+    }
+    
+    private function getVendor($key, $product)
+    {
+        if ($this->cache->has($key)) {
+
+            $this->vendor[$product->id] = $this->cache->get($key);
+            
+        } else {
+
+            $this->vendor[$product->id] = $product->vendor;
+            $this->cache->put($key, $this->vendor[$product->id]);
             
         }
     }
