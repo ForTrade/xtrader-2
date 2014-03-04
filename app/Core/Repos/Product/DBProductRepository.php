@@ -18,7 +18,17 @@ class DbProductRepository extends AbstractRepository implements ProductRepositor
         $this->model = $model;
     }
 
-    
+    /**
+     * Get featured products
+     * @return type 
+     */
+    public function getFeatured()
+    {
+        return $this->model
+                ->where('featured', '=', 1)
+                ->take(10)
+                ->get();
+    }
 
 
 }

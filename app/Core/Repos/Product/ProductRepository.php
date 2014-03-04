@@ -11,6 +11,11 @@ interface ProductRepository {
      */
     public function getById($id);
     
+    /**
+     * 
+     */
+    public function getFeatured();
+    
     
     
 }

@@ -22,7 +22,12 @@ class PresenterServiceProvider extends ServiceProvider {
                 'Core\Services\Cache\LaravelCache'
                 );
         
-        $this->app->view->composer('products.*', 'Core\Presenters\ProductPresenter');
+        $views = array(
+            'home.*',
+            'products.*'
+        );
+        
+        $this->app->view->composer($views, 'Core\Presenters\ProductPresenter');
         
     }
 

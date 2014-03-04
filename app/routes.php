@@ -17,13 +17,10 @@ Event::listen('illuminate.query', function($sql)
         print_r("<pre>" . $sql . "</pre>");
 });
 
-Route::get('/', function()
-{
-    return View::make('hello');
-});
+Route::get('/', array('as'=>'home', 'uses'=>'HomeController@index'));
 
 Route::resource('products', 'ProductsController');
 
-Route::get('c/{$slug}', array('as'=>'category', 'use'=>'CategoryController@show'));
-Route::get('p/{$slug}', array('as'=>'product', 'use'=>'ProductController@show'));
-Route::get('v/{$slug}', array('as'=>'vendor', 'use'=>'VendorController@show'));
+Route::get('c/{$slug}', array('as'=>'category', 'uses'=>'CategoryController@show'));
+Route::get('p/{$slug}', array('as'=>'product', 'uses'=>'ProductController@show'));
+Route::get('v/{$slug}', array('as'=>'vendor', 'uses'=>'VendorController@show'));

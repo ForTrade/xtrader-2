@@ -19,6 +19,7 @@ class ProductsTableSeeder extends Seeder {
                 'price' => 678.000,
                 'stock_qty' => 5,
                 'available_qty' => 5,
+                'featured' => 1,
                 'enabled' => 1,
                 'created_at' => date('Y-m-d'),
                 'updated_at' => date('Y-m-d')
@@ -34,6 +35,7 @@ class ProductsTableSeeder extends Seeder {
                 'price' => 350.000,
                 'stock_qty' => 10,
                 'available_qty' => 10,
+                'featured' => 1,
                 'enabled' => 1,
                 'created_at' => date('Y-m-d'),
                 'updated_at' => date('Y-m-d')

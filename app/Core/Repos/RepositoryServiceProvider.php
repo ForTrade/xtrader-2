@@ -14,6 +14,7 @@ namespace Core\Repos;
  */
 use Product;
 use Core\Repos\Product\CacheDecorator;
+use Core\Repos\Product\ProductRepository;
 use Core\Repos\Product\DbProductRepository;
 use Core\Services\Cache\LaravelCache;
 use Illuminate\Support\ServiceProvider;

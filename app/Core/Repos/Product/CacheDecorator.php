@@ -64,6 +64,21 @@ class CacheDecorator extends DbProductRepository {
         return $products;
     }
     
+    public function getFeatured()
+    {
+        $key = md5('products.home.feat');
+
+        if ($this->cache->has($key)) {
+            return $this->cache->get($key);
+        }
+
+        $products = parent::getFeatured();
+
+        $this->cache->put($key, $products);
+
+        return $products;
+    }
+    
 
 
 
