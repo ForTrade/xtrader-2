@@ -1,9 +1,8 @@
 <?php namespace Core\Repos\Product;
 
-use Product;
 use Core\Services\Cache\CacheInterface;
 
-class CacheDecorator extends DbProductRepository {
+class CacheDecorator extends AbstractProductDecorator {
 
     /**
      * @var CacheInterface
@@ -12,12 +11,11 @@ class CacheDecorator extends DbProductRepository {
 
 
     /**
-     * Construct
-     * 
-     * @param Product $product
+     *
+     * @param ProductRepository $product
      * @param CacheInterface $cache 
      */
-    public function __construct(Product $product, CacheInterface $cache)
+    public function __construct(ProductRepository $product, CacheInterface $cache)
     {
         parent::__construct($product);
         $this->cache = $cache;
@@ -72,7 +70,7 @@ class CacheDecorator extends DbProductRepository {
             return $this->cache->get($key);
         }
 
-        $products = parent::getFeatured();
+        $products = $this->model->getFeatured();
 
         $this->cache->put($key, $products);
 

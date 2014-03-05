@@ -1,6 +1,4 @@
-<?php
-
-namespace Core\Repos;
+<?php namespace Core\Repos;
 
 /*
  * To change this template, choose Tools | Templates
@@ -30,7 +28,7 @@ class RepositoryServiceProvider extends ServiceProvider {
                 );*/
 
         $this->app->bind('Core\Repos\Product\ProductRepository',function($app){
-            $product = new Product;
+            $product = new DbProductRepository(new Product);
             return new CacheDecorator(
                     $product,
                     new LaravelCache($app['cache'], 'product')

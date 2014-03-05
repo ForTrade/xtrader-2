@@ -1,6 +1,4 @@
-<?php
-
-namespace Core\Repos\Product;
+<?php namespace Core\Repos\Product;
 
 interface ProductRepository {
 

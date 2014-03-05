@@ -1,7 +1,7 @@
 <?php namespace Core\Repos\Product;
 
 use Core\Repos\AbstractRepository;
-use Product;
+use Illuminate\Database\Eloquent\Model;
 
 class DbProductRepository extends AbstractRepository implements ProductRepository {
 
@@ -11,9 +11,9 @@ class DbProductRepository extends AbstractRepository implements ProductRepositor
     protected $model;
 
     /**
-     * @param Product $model
+     * @param Model $model
      */
-    function __construct(Product $model)
+    function __construct(Model $model)
     {
         $this->model = $model;
     }
