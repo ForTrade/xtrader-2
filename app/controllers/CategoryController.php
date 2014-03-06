@@ -5,7 +5,7 @@ use Core\Repos\Product\ProductRepository;
 /**
  * 
  */
-class ProductsController extends \BaseController {
+class CategoryController extends \BaseController {
     
     /**
      * @var Core\Repos\Product 
@@ -60,10 +60,10 @@ class ProductsController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //return View::make('products.show');
-        return $this->productRepo->getById($id);
+        $products = $this->productRepo->getBySlug($slug);
+        return View::make('products.show', compact('products'));
     }
 
     /**

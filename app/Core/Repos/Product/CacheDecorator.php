@@ -62,6 +62,21 @@ class CacheDecorator extends AbstractProductDecorator {
         return $products;
     }
     
+    public function getBySlug($slug)
+    {
+        $key = md5('products.slug.' . $slug);
+
+        if ($this->cache->has($key)) {
+            return $this->cache->get($key);
+        }
+
+        $products = $this->model->getBySlug($slug);
+
+        $this->cache->put($key, $products);
+
+        return $products;
+    }
+    
     public function getFeatured()
     {
         $key = md5('products.home.feat');

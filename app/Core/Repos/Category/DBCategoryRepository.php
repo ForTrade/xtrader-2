@@ -1,9 +1,9 @@
-<?php namespace Core\Repos\Product;
+<?php namespace Core\Repos\Category;
 
 use Core\Repos\AbstractRepository;
 use Illuminate\Database\Eloquent\Model;
 
-class DbProductRepository extends AbstractRepository implements ProductRepository {
+class DbCategoryRepository extends AbstractRepository implements CategoryRepository {
 
     /**
      * @var Product
@@ -31,17 +31,6 @@ class DbProductRepository extends AbstractRepository implements ProductRepositor
         
     }
 
-    /**
-     * Get featured products
-     * @return type 
-     */
-    public function getFeatured()
-    {
-        return $this->model
-                ->where('featured', '=', 1)
-                ->take(10)
-                ->get();
-    }
 
 
 }

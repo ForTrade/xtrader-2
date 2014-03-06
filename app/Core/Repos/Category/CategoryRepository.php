@@ -1,6 +1,6 @@
-<?php namespace Core\Repos\Product;
+<?php namespace Core\Repos\Category;
 
-interface ProductRepository {
+interface CategoryRepository {
 
     /**
      * Fetch a record by id
@@ -14,10 +14,6 @@ interface ProductRepository {
      */
     public function getBySlug($slug);
     
-    /**
-     * 
-     */
-    public function getFeatured();
     
     
     
