@@ -1,6 +1,6 @@
 <?php
 
-use Core\Repos\Product\ProductRepository;
+use Core\Repos\Category\CategoryRepository;
 
 /**
  * 
@@ -10,16 +10,16 @@ class CategoryController extends \BaseController {
     /**
      * @var Core\Repos\Product 
      */
-    private $productRepo;
+    private $category;
     
     /**
      * Construct
      * 
      * @param ProductRepository $productRepo 
      */
-    function __construct(ProductRepository $productRepo)
+    function __construct(CategoryRepository $category)
     {
-        $this->productRepo = $productRepo;
+        $this->category = $category;
     }
 
     /**
@@ -29,7 +29,7 @@ class CategoryController extends \BaseController {
      */
     public function index()
     {
-        $products = $this->productRepo->getAll();
+        $products = $this->category->getAll();
         return View::make('products.index', compact('products'));
     }
 
@@ -62,8 +62,9 @@ class CategoryController extends \BaseController {
      */
     public function show($slug)
     {
-        $products = $this->productRepo->getBySlug($slug);
-        return View::make('products.show', compact('products'));
+        $category = $this->category->getBySlug($slug);
+        $products = $category->products;
+        return View::make('categories.show', compact('products'));
     }
 
     /**

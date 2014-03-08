@@ -26,6 +26,7 @@ class DbCategoryRepository extends AbstractRepository implements CategoryReposit
     public function getBySlug($slug)
     {
         return $this->model
+                ->with('products')
                 ->where('slug', '=', $slug)
                 ->first();
         

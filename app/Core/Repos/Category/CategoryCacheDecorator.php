@@ -1,8 +1,8 @@
-<?php namespace Core\Repos\Product;
+<?php namespace Core\Repos\Category;
 
 use Core\Services\Cache\CacheInterface;
 
-class CacheDecorator extends AbstractProductDecorator {
+class CategoryCacheDecorator extends AbstractCategoryDecorator {
 
     /**
      * @var CacheInterface
@@ -15,9 +15,9 @@ class CacheDecorator extends AbstractProductDecorator {
      * @param ProductRepository $product
      * @param CacheInterface $cache 
      */
-    public function __construct(ProductRepository $product, CacheInterface $cache)
+    public function __construct(CategoryRepository $category, CacheInterface $cache)
     {
-        parent::__construct($product);
+        parent::__construct($category);
         $this->cache = $cache;
     }
 
@@ -34,11 +34,11 @@ class CacheDecorator extends AbstractProductDecorator {
             return $this->cache->get($key);
         }
 
-        $products = $this->model->all();
+        $categories = $this->model->all();
 
-        $this->cache->put($key, $products);
+        $this->cache->put($key, $categories);
 
-        return $products;
+        return $categories;
     }
 
     /**
@@ -64,17 +64,17 @@ class CacheDecorator extends AbstractProductDecorator {
     
     public function getBySlug($slug)
     {
-        $key = md5('products.slug.' . $slug);
+        $key = md5('categories.slug.' . $slug);
 
         if ($this->cache->has($key)) {
             return $this->cache->get($key);
         }
 
-        $products = $this->model->getBySlug($slug);
+        $categories = $this->model->getBySlug($slug);
 
-        $this->cache->put($key, $products);
+        $this->cache->put($key, $categories);
 
-        return $products;
+        return $categories;
     }
     
     public function getFeatured()

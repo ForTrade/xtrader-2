@@ -24,7 +24,8 @@ class PresenterServiceProvider extends ServiceProvider {
         
         $views = array(
             'home.*',
-            //'products.*'
+            //'products.*',
+            'categories.*'
         );
         
         $this->app->view->composer($views, 'Core\Presenters\ProductPresenter');
