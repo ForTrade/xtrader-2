@@ -101,7 +101,6 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
-        'Cartalyst\Sentry\SentryServiceProvider',
         'Core\Repos\RepositoryServiceProvider',
         'Core\Presenters\PresenterServiceProvider',
     ),
@@ -166,7 +165,6 @@ return array(
         'URL' => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
-        'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
         'Helpers' => 'Core\Helpers',
     ),
 );
