@@ -6,10 +6,11 @@
     "require": {
         "laravel/framework": "4.1.*",
         "way/generators": "dev-master",
-        "barryvdh/laravel-ide-helper": "1.*"
+        "barryvdh/laravel-ide-helper": "1.*",
+        "keevitaja/keeper": "dev-master"
     },
     "autoload": {
-        
+
         "classmap": [
             "app/commands",
             "app/controllers",
@@ -18,11 +19,11 @@
             "app/database/seeds",
             "app/tests/TestCase.php"
         ],
-  
+
         "psr-4": {
             "Core\\": "app/Core"
         }
-        
+
     },
     "scripts": {
         "post-install-cmd": [

@@ -103,6 +103,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Core\Repos\RepositoryServiceProvider',
         'Core\Presenters\PresenterServiceProvider',
+        'Keevitaja\Keeper\KeeperServiceProvider',
     ),
     /*
       |--------------------------------------------------------------------------
@@ -166,5 +167,6 @@ return array(
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
         'Helpers' => 'Core\Helpers',
+        'Keeper' => 'Keevitaja\Keeper\KeeperFacade',
     ),
 );

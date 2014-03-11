@@ -1535,13 +1535,38 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 }
 
 	/**
+	 * Determine if logged user belongs to role
+	 *
+	 * @param integer $userId
+	 * @param string $roleName
+	 * @return boolean
+	 * @static 
+	 */
+	 public static function hasRole($roleName){
+		return Keevitaja\Keeper\GuardExtension::hasRole($roleName);
+	 }
+
+	/**
+	 * Determine if logged user has permission
+	 *
+	 * @param integer $userId
+	 * @param string $permissionName
+	 * @return boolean
+	 * @static 
+	 */
+	 public static function hasPermission($permissionName){
+		return Keevitaja\Keeper\GuardExtension::hasPermission($permissionName);
+	 }
+
+	/**
 	 * Determine if the current user is authenticated.
 	 *
 	 * @return bool
 	 * @static 
 	 */
 	 public static function check(){
-		return Illuminate\Auth\Guard::check();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::check();
 	 }
 
 	/**
@@ -1551,7 +1576,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function guest(){
-		return Illuminate\Auth\Guard::guest();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::guest();
 	 }
 
 	/**
@@ -1561,7 +1587,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function user(){
-		return Illuminate\Auth\Guard::user();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::user();
 	 }
 
 	/**
@@ -1572,7 +1599,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function once($credentials = array()){
-		return Illuminate\Auth\Guard::once($credentials);
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::once($credentials);
 	 }
 
 	/**
@@ -1583,7 +1611,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function validate($credentials = array()){
-		return Illuminate\Auth\Guard::validate($credentials);
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::validate($credentials);
 	 }
 
 	/**
@@ -1595,7 +1624,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function basic($field = 'email', $request = null){
-		return Illuminate\Auth\Guard::basic($field, $request);
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::basic($field, $request);
 	 }
 
 	/**
@@ -1607,7 +1637,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function onceBasic($field = 'email', $request = null){
-		return Illuminate\Auth\Guard::onceBasic($field, $request);
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::onceBasic($field, $request);
 	 }
 
 	/**
@@ -1620,7 +1651,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function attempt($credentials = array(), $remember = false, $login = true){
-		return Illuminate\Auth\Guard::attempt($credentials, $remember, $login);
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::attempt($credentials, $remember, $login);
 	 }
 
 	/**
@@ -1631,7 +1663,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function attempting($callback){
-		 Illuminate\Auth\Guard::attempting($callback);
+		//Method inherited from Illuminate\Auth\Guard
+		 Keevitaja\Keeper\GuardExtension::attempting($callback);
 	 }
 
 	/**
@@ -1643,7 +1676,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function login($user, $remember = false){
-		 Illuminate\Auth\Guard::login($user, $remember);
+		//Method inherited from Illuminate\Auth\Guard
+		 Keevitaja\Keeper\GuardExtension::login($user, $remember);
 	 }
 
 	/**
@@ -1655,7 +1689,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function loginUsingId($id, $remember = false){
-		return Illuminate\Auth\Guard::loginUsingId($id, $remember);
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::loginUsingId($id, $remember);
 	 }
 
 	/**
@@ -1666,7 +1701,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function onceUsingId($id){
-		return Illuminate\Auth\Guard::onceUsingId($id);
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::onceUsingId($id);
 	 }
 
 	/**
@@ -1676,7 +1712,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function logout(){
-		 Illuminate\Auth\Guard::logout();
+		//Method inherited from Illuminate\Auth\Guard
+		 Keevitaja\Keeper\GuardExtension::logout();
 	 }
 
 	/**
@@ -1687,7 +1724,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getCookieJar(){
-		return Illuminate\Auth\Guard::getCookieJar();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getCookieJar();
 	 }
 
 	/**
@@ -1698,7 +1736,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setCookieJar($cookie){
-		 Illuminate\Auth\Guard::setCookieJar($cookie);
+		//Method inherited from Illuminate\Auth\Guard
+		 Keevitaja\Keeper\GuardExtension::setCookieJar($cookie);
 	 }
 
 	/**
@@ -1708,7 +1747,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getDispatcher(){
-		return Illuminate\Auth\Guard::getDispatcher();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getDispatcher();
 	 }
 
 	/**
@@ -1718,7 +1758,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setDispatcher($events){
-		 Illuminate\Auth\Guard::setDispatcher($events);
+		//Method inherited from Illuminate\Auth\Guard
+		 Keevitaja\Keeper\GuardExtension::setDispatcher($events);
 	 }
 
 	/**
@@ -1728,7 +1769,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getSession(){
-		return Illuminate\Auth\Guard::getSession();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getSession();
 	 }
 
 	/**
@@ -1738,7 +1780,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getProvider(){
-		return Illuminate\Auth\Guard::getProvider();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getProvider();
 	 }
 
 	/**
@@ -1749,7 +1792,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setProvider($provider){
-		 Illuminate\Auth\Guard::setProvider($provider);
+		//Method inherited from Illuminate\Auth\Guard
+		 Keevitaja\Keeper\GuardExtension::setProvider($provider);
 	 }
 
 	/**
@@ -1759,7 +1803,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getUser(){
-		return Illuminate\Auth\Guard::getUser();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getUser();
 	 }
 
 	/**
@@ -1770,7 +1815,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setUser($user){
-		 Illuminate\Auth\Guard::setUser($user);
+		//Method inherited from Illuminate\Auth\Guard
+		 Keevitaja\Keeper\GuardExtension::setUser($user);
 	 }
 
 	/**
@@ -1780,7 +1826,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getRequest(){
-		return Illuminate\Auth\Guard::getRequest();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getRequest();
 	 }
 
 	/**
@@ -1791,7 +1838,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setRequest($request){
-		return Illuminate\Auth\Guard::setRequest($request);
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::setRequest($request);
 	 }
 
 	/**
@@ -1801,7 +1849,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getLastAttempted(){
-		return Illuminate\Auth\Guard::getLastAttempted();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getLastAttempted();
 	 }
 
 	/**
@@ -1811,7 +1860,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getName(){
-		return Illuminate\Auth\Guard::getName();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getName();
 	 }
 
 	/**
@@ -1821,7 +1871,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getRecallerName(){
-		return Illuminate\Auth\Guard::getRecallerName();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::getRecallerName();
 	 }
 
 	/**
@@ -1831,7 +1882,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function viaRemember(){
-		return Illuminate\Auth\Guard::viaRemember();
+		//Method inherited from Illuminate\Auth\Guard
+		return Keevitaja\Keeper\GuardExtension::viaRemember();
 	 }
 
 }
@@ -11838,5 +11890,52 @@ class View extends Illuminate\Support\Facades\View{
 }
 
 class Helpers extends Core\Helpers{
+}
+
+class Keeper extends Keevitaja\Keeper\KeeperFacade{
+	/**
+	 * Constructor
+	 *
+	 * @param object $cache
+	 * @static 
+	 */
+	 public static function __construct($cache){
+		 Keevitaja\Keeper\Keeper::__construct($cache);
+	 }
+
+	/**
+	 * Determine if user belongs to role
+	 *
+	 * @param integer $userId
+	 * @param string $roleName
+	 * @return boolean
+	 * @static 
+	 */
+	 public static function hasRole($userId, $roleName){
+		return Keevitaja\Keeper\Keeper::hasRole($userId, $roleName);
+	 }
+
+	/**
+	 * Determine if user has a permission
+	 *
+	 * @param integer $userId
+	 * @param string $permissionName
+	 * @return boolean
+	 * @static 
+	 */
+	 public static function hasPermission($userId, $permissionName){
+		return Keevitaja\Keeper\Keeper::hasPermission($userId, $permissionName);
+	 }
+
+	/**
+	 * Flush cache. Works only if cache tags are present.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function flushCache(){
+		 Keevitaja\Keeper\Keeper::flushCache();
+	 }
+
 }
 
