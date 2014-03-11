@@ -36,4 +36,5 @@ Route::get('c/{slug}', array('as'=>'category', 'uses'=>'CategoryController@show'
 Route::get('p/{slug}', array('as'=>'product', 'uses'=>'ProductController@show'));
 Route::get('v/{slug}', array('as'=>'vendor', 'uses'=>'VendorController@show'));
 
+
 //Route::resource('products', 'ProductsController');
